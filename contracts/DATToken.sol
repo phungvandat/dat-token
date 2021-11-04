@@ -36,6 +36,7 @@ contract DATToken {
         public
         returns (bool)
     {
+        require(balances[msg.sender] >= numTokens, "Insufficient balance");
         balances[msg.sender] = balances[msg.sender].sub(numTokens);
         balances[receiver] = balances[receiver].add(numTokens);
 
@@ -61,15 +62,22 @@ contract DATToken {
     }
 
     function transferFrom(
-        address _owner,
-        address buyer,
+        address from,
+        address to,
         uint256 numTokens
     ) public returns (bool) {
-        balances[owner] = balances[owner].sub(numTokens);
-        allowed[owner][msg.sender] = allowed[owner][msg.sender].sub(numTokens);
-        balances[buyer] = balances[buyer].add(numTokens);
+        require(
+            allowed[from][msg.sender] >= numTokens,
+            "Insufficient allowed's owner"
+        );
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(numTokens);
 
-        emit Transfer(_owner, buyer, numTokens);
+        require(balances[from] >= numTokens, "Insufficient balance's owner");
+        balances[from] = balances[from].sub(numTokens);
+
+        balances[to] = balances[to].add(numTokens);
+
+        emit Transfer(from, to, numTokens);
 
         return true;
     }
