@@ -15,7 +15,7 @@ contract DATToken {
 
     string public name = "DAT Token";
     string public symbol = "DAT";
-    uint256 public totalSupply = 20000000;
+    uint256 public totalSupply = 2000000000000000000000000;
     uint8 public constant decimals = 18;
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;
