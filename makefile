@@ -19,10 +19,10 @@ local-deploy:
 	npx hardhat run --network localhost scripts/deploy.js
 
 deploy:
-	npx hardhat run scripts/3_deploy_upgrade_nft_v2_v3.js --network ropsten
+	npx hardhat run scripts/1_deploy_dat_token.js --network ropsten
 
 help:
 	npx hardhat help
 
 verify:
-	npx hardhat verify --network ropsten Address1 Address2
+	npx hardhat verify --network ropsten Addr1

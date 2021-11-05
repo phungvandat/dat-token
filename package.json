@@ -12,7 +12,8 @@
   "dependencies": {
     "@openzeppelin/contracts": "4.3.2",
     "@openzeppelin/contracts-upgradeable": "4.3.2",
-    "@openzeppelin/hardhat-upgrades": "1.12.0"
+    "@openzeppelin/hardhat-upgrades": "1.12.0",
+    "bignumber.js": "9.0.1"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
