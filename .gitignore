@@ -9,3 +9,7 @@ cache
 artifacts
 
 hardhat.config.js
+
+*.log
+
+.openzeppelin

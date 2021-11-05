@@ -19,7 +19,7 @@ local-deploy:
 	npx hardhat run --network localhost scripts/deploy.js
 
 deploy:
-	npx hardhat run scripts/deploy.js --network ropsten
+	npx hardhat run scripts/3_deploy_upgrade_nft_v2_v3.js --network ropsten
 
 help:
 	npx hardhat help
