@@ -14,7 +14,15 @@ clean:
 
 node:
 	npx hardhat node
-	node scripts/sample-script.js
+
+local-deploy:
+	npx hardhat run --network localhost scripts/deploy.js
+
+deploy:
+	npx hardhat run scripts/deploy.js --network ropsten
 
 help:
 	npx hardhat help
+
+verify:
+	npx hardhat verify --network ropsten Address1 Address2

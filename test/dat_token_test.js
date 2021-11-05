@@ -2,16 +2,14 @@ const {expect} = require("chai")
 const {ethers} = require("hardhat")
 
 describe('DAT Token', ()=>{
-    let Token;
     let datToken;
     let owner;
     let addr1;
     let addr2;
-    let addrs;
     const dfTokenNumbers = 20000000;
 
     beforeEach(async ()=>{
-        [owner, addr1, addr2, ...addrs] = await ethers.getSigners()
+        [owner, addr1, addr2] = await ethers.getSigners()
 
         const SafeMath = await ethers.getContractFactory("SafeMath")
         const safeMath = await SafeMath.deploy()
